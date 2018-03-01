@@ -1,4 +1,4 @@
-unsorted_list = [45, 65, 79, 14, 4, 6, 71, 89, 90, 99]
+unsorted_list = [90, 89, 79, 14, 9, 6, 71, 91, 4, 45]
 
 operations = 0
 
