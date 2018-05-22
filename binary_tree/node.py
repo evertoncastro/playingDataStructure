@@ -23,12 +23,12 @@ class Node(object):
             else:
                 self.__right.add_node(n)
 
-    def visit(self):
+    def visit_in_order(self):
         if self.__left:
-            self.__left.visit()
+            self.__left.visit_in_order()
         print str(self.__value)
         if self.__right:
-            self.__right.visit()
+            self.__right.visit_in_order()
 
     def search(self, value):
         if self.value == value:

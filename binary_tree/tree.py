@@ -13,8 +13,10 @@ class Tree(object):
         else:
             self.__root.add_node(node)
 
-    def traverse(self):
-        self.__root.visit()
+    def traverse_in_order(self):
+        print 'Start traverse in order'
+        self.__root.visit_in_order()
+        print 'End traverse in order'
 
     def search(self, value):
         self.__root.search(value)

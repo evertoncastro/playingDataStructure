@@ -10,6 +10,6 @@ if __name__ == '__main__':
     tree.add_value(4)
     tree.add_value(1)
     tree.add_value(2)
-    tree.traverse()
+    tree.traverse_in_order()
     tree.search(16)
     tree.search(17)
