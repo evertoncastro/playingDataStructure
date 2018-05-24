@@ -30,6 +30,20 @@ class Node(object):
         if self.__right:
             self.__right.visit_in_order()
 
+    def visit_pre_order(self):
+        print str(self.value)
+        if self.__left:
+            self.__left.visit_pre_order()
+        if self.__right:
+            self.__right.visit_pre_order()
+
+    def visit_post_order(self):
+        if self.__left:
+            self.__left.visit_post_order()
+        if self.__right:
+            self.__right.visit_post_order()
+        print str(self.value)
+
     def search(self, value):
         if self.value == value:
             print 'Value found: %s' % str(value)

@@ -18,5 +18,15 @@ class Tree(object):
         self.__root.visit_in_order()
         print 'End traverse in order'
 
+    def traverse_pre_order(self):
+        print 'Start traverse pre order'
+        self.__root.visit_pre_order()
+        print 'End traverse pre order'
+
+    def traverse_post_order(self):
+        print 'Start traverse post order'
+        self.__root.visit_post_order()
+        print 'End traverse post order'
+
     def search(self, value):
         self.__root.search(value)
