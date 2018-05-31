@@ -24,3 +24,27 @@ if __name__ == '__main__':
     tree.traverse_pre_order()
     tree.traverse_post_order()
 
+    flow = True
+    while flow:
+        questions = [
+            inquirer.List('action',
+                          message="What action do you want to perform?",
+                          choices=['Traverse in order',
+                                   'Traverse pre order',
+                                   'Traverse post order',
+                                   'Exit'],
+                          ),
+        ]
+
+        answer = inquirer.prompt(questions)
+
+        if answer['action'] == 'Traverse in order':
+            tree.traverse_in_order()
+        elif answer['action'] == 'Traverse pre order':
+            tree.traverse_pre_order()
+        elif answer['action'] == 'Traverse post order':
+            tree.traverse_post_order()
+        elif answer['action'] == 'Exit':
+            flow = False
+
+
