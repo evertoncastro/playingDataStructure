@@ -1,5 +1,5 @@
 # PlayingDataStructure
-##### A project to test some data structure in python scripts.
+##### A project to test some data structure in python scripts :snake:
 
 ### Setup
 
