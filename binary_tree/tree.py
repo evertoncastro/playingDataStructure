@@ -4,10 +4,10 @@ from node import Node
 class Tree(object):
     __root = None
 
-    def add_value(self, val):
-        if type(val) != int:
+    def add_value(self, _val):
+        if type(_val) != int:
             raise TypeError('The val parameter should be an integer')
-        node = Node(val)
+        node = Node(_val)
         if not self.__root:
             self.__root = node
         else:
@@ -28,9 +28,8 @@ class Tree(object):
         self.__root.visit_post_order()
         print 'End traverse post order'
 
-    def total_leaf_nodes(self):
-        total = self.__root.leafs()
-        print 'Total leaf nodes: %s' % str(total)
+    def leaf_nodes(self):
+        return self.__root.leafs()
 
     def search(self, value):
         self.__root.search(value)
@@ -40,4 +39,4 @@ if __name__ == '__main__':
     tree = Tree()
     for val in [7, 3, 6, 9, 11, 5, 2, 8]:
         tree.add_value(val)
-    tree.total_leaf_nodes()
+    tree.leaf_nodes()
