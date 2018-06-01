@@ -28,5 +28,16 @@ class Tree(object):
         self.__root.visit_post_order()
         print 'End traverse post order'
 
+    def total_leaf_nodes(self):
+        total = self.__root.leafs()
+        print 'Total leaf nodes: %s' % str(total)
+
     def search(self, value):
         self.__root.search(value)
+
+
+if __name__ == '__main__':
+    tree = Tree()
+    for val in [7, 3, 6, 9, 11, 5, 2, 8]:
+        tree.add_value(val)
+    tree.total_leaf_nodes()

@@ -5,7 +5,6 @@ from inquirer.themes import GreenPassion
 from tree import Tree
 
 if __name__ == '__main__':
-    pattern_validation = re.compile("^([0-9]+)+$")
 
     questions = [
         inquirer.Text('size', message="What's the node quantity for the tree?")
@@ -13,12 +12,16 @@ if __name__ == '__main__':
     answers = inquirer.prompt(questions, theme=GreenPassion())
     size = int(answers['size'])
 
+    # TODO: accept only 1 - 99 as tree size
+
     # Random with non-repeated
     random_values = random.sample(xrange(1, 99), size)
 
     tree = Tree()
     for val in random_values:
         tree.add_value(val)
+
+    tree.total_leaf_nodes()
 
     tree.traverse_in_order()
     tree.traverse_pre_order()

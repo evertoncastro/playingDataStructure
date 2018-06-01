@@ -54,3 +54,15 @@ class Node(object):
         else:
             print 'Not found value: %s' % str(value)
 
+    def leafs(self, _list=None):
+        if not _list:
+            _list = []
+        if not self.__left and not self.__right:
+            _list.append(self.__value)
+            return _list
+        if self.__left is not None:
+            _list = self.__left.leafs(_list)
+        if self.__right is not None:
+            _list = self.__right.leafs(_list)
+        return _list
+
