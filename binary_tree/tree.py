@@ -38,7 +38,10 @@ class Tree(object):
         return self.__root.recursive_search(value)
 
     def degree(self, value):
-        return self.__root.recursive_degree(value)
+        node = self.__root.recursive_search(value)
+        if not node:
+            return None
+        return node.degree()
 
     def level(self):
         return self.__root.recursive_level()

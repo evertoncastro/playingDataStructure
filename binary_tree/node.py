@@ -84,14 +84,11 @@ class Node(object):
         elif value > self.value and self.__right is not None:
             return self.__right.recursive_search(value)
 
-    def recursive_degree(self, value):
-        node = self.recursive_search(value)
-        if not node:
-            return None
+    def degree(self):
         total = 0
-        if node.__left:
+        if self.__left:
             total += 1
-        if node.__right:
+        if self.__right:
             total += 1
         return total
 
