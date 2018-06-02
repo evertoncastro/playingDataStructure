@@ -75,6 +75,17 @@ class Node(object):
         elif value > self.value and self.__right is not None:
             return self.__right.search(value)
 
+    def degree(self, value):
+        node = self.search(value)
+        if not node:
+            return None
+        total = 0
+        if node.__left:
+            total += 1
+        if node.__right:
+            total += 1
+        return total
+
     def leafs(self, _list=None):
         if not _list:
             _list = []

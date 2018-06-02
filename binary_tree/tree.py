@@ -37,4 +37,7 @@ class Tree(object):
     def search(self, value):
         return self.__root.search(value)
 
+    def degree(self, value):
+        return self.__root.degree(value)
+
 
