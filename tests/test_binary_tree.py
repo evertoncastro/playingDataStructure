@@ -41,6 +41,13 @@ class TestTree(unittest.TestCase):
         result = tree.degree(6)
         self.assertEqual(result, 1)
 
+    def test_tree_level(self):
+        tree = Tree()
+        for val in [7, 3, 6, 9, 11, 5, 2, 8]:
+            tree.add_value(val)
+        result = tree.level()
+        self.assertEqual(result, 3)
+
 
 if __name__ == '__main__':
     unittest.main()

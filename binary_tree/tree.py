@@ -40,4 +40,7 @@ class Tree(object):
     def degree(self, value):
         return self.__root.degree(value)
 
+    def level(self):
+        return self.__root.level()
+
 

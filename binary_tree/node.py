@@ -109,3 +109,14 @@ class Node(object):
                 _list = self.__right.internals(_list)
         return _list
 
+    def level(self, _l=0):
+        if not self.__left and not self.__right:
+            return _l
+        l_left, l_right = 0, 0
+        if self.__left is not None:
+            l_left = self.__left.level(_l+1)
+        if self.__right is not None:
+            l_right = self.__right.level(_l+1)
+
+        return max(l_left, l_right)
+
