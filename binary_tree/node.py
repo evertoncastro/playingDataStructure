@@ -7,9 +7,32 @@ class Node(object):
     def __init__(self, value):
         self.__value = value
 
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
+
     @property
     def value(self):
         return self.__value
+
+    # @property
+    # def left(self):
+    #     return self.__left
+    #
+    # @left.setter
+    # def left(self, node):
+    #     if not isinstance(node, Node):
+    #         raise ValueError('Value provided is not of Node Class')
+    #     self.__left = node
+    #
+    # @property
+    # def right(self):
+    #     return self.__right
+    #
+    # @right.setter
+    # def right(self, node):
+    #     if not isinstance(node, Node):
+    #         raise ValueError('Value provided is not of Node Class')
+    #     self.__right = node
 
     def add_node(self, n):
         if n.value < self.value:
@@ -46,13 +69,11 @@ class Node(object):
 
     def search(self, value):
         if self.value == value:
-            print 'Value found: %s' % str(value)
+            return self
         elif value < self.value and self.__left is not None:
-            self.__left.search(value)
+            return self.__left.search(value)
         elif value > self.value and self.__right is not None:
-            self.__right.search(value)
-        else:
-            print 'Not found value: %s' % str(value)
+            return self.__right.search(value)
 
     def leafs(self, _list=None):
         if not _list:

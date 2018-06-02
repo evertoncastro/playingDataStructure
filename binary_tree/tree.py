@@ -35,6 +35,6 @@ class Tree(object):
         return self.__root.internals()
 
     def search(self, value):
-        self.__root.search(value)
+        return self.__root.search(value)
 
 
