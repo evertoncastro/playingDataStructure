@@ -1,5 +1,9 @@
 
 class Node(object):
+    """
+    Class to create a Tree of Nodes based on hierarchy structure.
+    The most part of the methods implement a recursive way to navigate over the hierarchy od nodes
+    """
     __value = None
     __left = None
     __right = None
@@ -8,6 +12,11 @@ class Node(object):
         self.__value = value
 
     def __eq__(self, other):
+        """
+        Used in order to compare two nodes looking for the values inside them in place of memory pointer
+        :param The value to be compared with self:
+        :return a Boolean value:
+        """
         return self.__dict__ == other.__dict__
 
     @property
@@ -67,16 +76,16 @@ class Node(object):
             self.__right.visit_post_order()
         print str(self.value)
 
-    def search(self, value):
+    def recursive_search(self, value):
         if self.value == value:
             return self
         elif value < self.value and self.__left is not None:
-            return self.__left.search(value)
+            return self.__left.recursive_search(value)
         elif value > self.value and self.__right is not None:
-            return self.__right.search(value)
+            return self.__right.recursive_search(value)
 
-    def degree(self, value):
-        node = self.search(value)
+    def recursive_degree(self, value):
+        node = self.recursive_search(value)
         if not node:
             return None
         total = 0
@@ -86,37 +95,37 @@ class Node(object):
             total += 1
         return total
 
-    def leafs(self, _list=None):
+    def recursive_leafs(self, _list=None):
         if not _list:
             _list = []
         if not self.__left and not self.__right:
             _list.append(self.__value)
             return _list
         if self.__left is not None:
-            _list = self.__left.leafs(_list)
+            _list = self.__left.recursive_leafs(_list)
         if self.__right is not None:
-            _list = self.__right.leafs(_list)
+            _list = self.__right.recursive_leafs(_list)
         return _list
 
-    def internals(self, _list=None):
+    def recursive_internals(self, _list=None):
         if not _list:
             _list = []
         if self.__left or self.__right:
             if self.__left is not None:
-                _list = self.__left.internals(_list)
+                _list = self.__left.recursive_internals(_list)
             _list.append(self.__value)
             if self.__right is not None:
-                _list = self.__right.internals(_list)
+                _list = self.__right.recursive_internals(_list)
         return _list
 
-    def level(self, _l=0):
+    def recursive_level(self, _l=0):
         if not self.__left and not self.__right:
             return _l
         l_left, l_right = 0, 0
         if self.__left is not None:
-            l_left = self.__left.level(_l+1)
+            l_left = self.__left.recursive_level(_l+1)
         if self.__right is not None:
-            l_right = self.__right.level(_l+1)
+            l_right = self.__right.recursive_level(_l+1)
 
         return max(l_left, l_right)
 

@@ -29,18 +29,18 @@ class Tree(object):
         print 'End traverse post order'
 
     def leaf_nodes(self):
-        return self.__root.leafs()
+        return self.__root.recursive_leafs()
 
     def internal_nodes(self):
-        return self.__root.internals()
+        return self.__root.recursive_internals()
 
     def search(self, value):
-        return self.__root.search(value)
+        return self.__root.recursive_search(value)
 
     def degree(self, value):
-        return self.__root.degree(value)
+        return self.__root.recursive_degree(value)
 
     def level(self):
-        return self.__root.level()
+        return self.__root.recursive_level()
 
 
