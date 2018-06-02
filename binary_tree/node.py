@@ -129,3 +129,14 @@ class Node(object):
 
         return max(l_left, l_right)
 
+    def recursive_height(self, _h=0):
+        if not self.__left and not self.__right:
+            return _h
+        h_left, h_right = 0, 0
+        if self.__left is not None:
+            h_left = self.__left.recursive_height(_h+1)
+        if self.__right is not None:
+            h_right = self.__right.recursive_height(_h+1)
+
+        return max(h_left, h_right)
+

@@ -43,4 +43,12 @@ class Tree(object):
     def level(self):
         return self.__root.recursive_level()
 
+    def height(self, value):
+        node = self.__root.recursive_search(value)
+        if not node:
+            return None
+        return node.recursive_height()
+
+
+
 

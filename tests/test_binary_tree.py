@@ -48,6 +48,13 @@ class TestTree(unittest.TestCase):
         result = tree.level()
         self.assertEqual(result, 3)
 
+    def test_node_height2(self):
+        tree = Tree()
+        for val in [7, 3, 6, 9, 11, 5, 2, 8, 13, 15, 12, 10, 14]:
+            tree.add_value(val)
+        result = tree.height(9)
+        self.assertEqual(result, 4)
+
 
 if __name__ == '__main__':
     unittest.main()
