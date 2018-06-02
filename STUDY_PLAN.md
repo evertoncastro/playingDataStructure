@@ -4,7 +4,7 @@
 #### Legend
 
 - To study :dart:
-- In progress :pencil:
+- In progress :pencil2:
 - Finished :mortar_board:
 
 #### Topics
