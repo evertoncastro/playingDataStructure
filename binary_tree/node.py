@@ -66,3 +66,14 @@ class Node(object):
             _list = self.__right.leafs(_list)
         return _list
 
+    def internals(self, _list=None):
+        if not _list:
+            _list = []
+        if self.__left or self.__right:
+            if self.__left is not None:
+                _list = self.__left.internals(_list)
+            _list.append(self.__value)
+            if self.__right is not None:
+                _list = self.__right.internals(_list)
+        return _list
+

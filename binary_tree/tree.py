@@ -31,12 +31,10 @@ class Tree(object):
     def leaf_nodes(self):
         return self.__root.leafs()
 
+    def internal_nodes(self):
+        return self.__root.internals()
+
     def search(self, value):
         self.__root.search(value)
 
 
-if __name__ == '__main__':
-    tree = Tree()
-    for val in [7, 3, 6, 9, 11, 5, 2, 8]:
-        tree.add_value(val)
-    tree.leaf_nodes()
