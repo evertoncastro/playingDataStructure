@@ -137,3 +137,13 @@ class Node(object):
 
         return max(h_left, h_right)
 
+    def recursive_depth(self, value, _d=0):
+        if self.__value == value:
+            return _d
+        elif value < self.value and self.__left is not None:
+            _d = self.__left.recursive_depth(value, _d+1)
+        elif value > self.value and self.__right is not None:
+            _d = self.__right.recursive_depth(value, _d+1)
+        return _d
+
+

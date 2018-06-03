@@ -52,6 +52,9 @@ class Tree(object):
             return None
         return node.recursive_height()
 
+    def depth(self, value):
+        return self.__root.recursive_depth(value)
+
 
 
 
