@@ -12,5 +12,5 @@
 - Binary numbers (:dart:)
 - Octal numbers (:dart:)
 - Hexadecimal numbers (:dart:)
-- Binary Tree (:pencil2:)
+- Binary Tree (:mortar_board:)
 
