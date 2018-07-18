@@ -21,8 +21,6 @@ if __name__ == '__main__':
     for val in random_values:
         tree.add_value(val)
 
-    tree.total_leaf_nodes()
-
     tree.traverse_in_order()
     tree.traverse_pre_order()
     tree.traverse_post_order()
